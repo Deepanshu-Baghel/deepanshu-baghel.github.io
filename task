@@ -1,0 +1,46 @@
+Task List: 3D Portfolio Website
+ Initialization & Setup
+
+ Initialize Next.js project with Tailwind CSS
+ Install dependencies (Three.js, React Three Fiber, Drei, Framer Motion, Lucide React)
+ Configure Tailwind for dark/neon theme
+ Set up project folder structure (components, hooks, assets)
+ Core Components & Layout
+
+ Create basic Layout component (SEO, Metadata)
+ Implement responsive Navigation Bar (Glassmorphism)
+ Implement Footer
+ Create 3D Canvas wrapper / Background component
+ Hero Section
+
+ Implement Hero container and text content
+ Create 3D Avatar/Abstract floating element
+ Add cycling subtitle animation
+ About Section
+
+ Build About geometry/layout
+ Add floating specific cards (Problem solving, DSA, etc.)
+ Skills Section
+
+ Create 3D Orbit/Card layout for skills
+ Map skills (Frontend, Backend, Blockchain, Tools)
+ Projects Section
+
+ Design interactive 3D Project Cards
+ Implement hover effects and external links
+ Experience Section
+
+ Build Vertical 3D Timeline component
+ Add animation on scroll
+ Contact Section
+
+ Create Contact Form with 3D elements
+ detailed social links
+ Polish & Optimization
+
+ Ensure Mobile Responsiveness
+ SEO Optimization (Check meta tags, lighthouse)
+ Performance tuning (Lazy loading 3D models)
+
+Comment
+Ctrl+Alt+M
