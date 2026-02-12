@@ -1,4 +1,5 @@
-import type { Config } from 'tailwindcss'
+
+import tailwindcss from '@tailwindcss/vite'
 
 const config: Config = {
   content: [
