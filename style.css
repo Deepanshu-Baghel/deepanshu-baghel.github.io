@@ -15,6 +15,16 @@ body {
     color: #f8fafc;
     background: #0a0a0a;
     overflow-x: hidden;
+    opacity: 1;
+}
+
+body.loading {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+body.is-loaded {
+    opacity: 1;
 }
 
 /* Custom Properties */
