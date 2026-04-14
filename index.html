@@ -1,39 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Deepanshu Baghel — Software & Blockchain Developer. Building innovative full-stack web apps and decentralized applications." />
-  <meta name="keywords"
-    content="Deepanshu Baghel, Software Developer, Blockchain Developer, Web3, Full Stack Developer, India" />
+  <meta name="description" content="Deepanshu Baghel — Full Stack & Blockchain Developer. Building innovative web apps and decentralized applications." />
+  <meta name="keywords" content="Deepanshu Baghel, Software Developer, Blockchain Developer, Web3, Full Stack Developer, India" />
   <link rel="canonical" href="https://codewithdeepanshu.me/" />
-
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://codewithdeepanshu.me/" />
-  <meta property="og:title" content="Deepanshu Baghel | Software & Blockchain Developer" />
-  <meta property="og:description"
-    content="Deepanshu Baghel — Software & Blockchain Developer. Building innovative full-stack web apps and decentralized applications." />
-  <meta property="og:image" content="https://codewithdeepanshu.me/profile.jpg" />
-
-  <!-- Twitter -->
+  <meta property="og:title" content="Deepanshu Baghel | Full Stack & Blockchain Developer" />
+  <meta property="og:description" content="Full Stack & Blockchain Developer building innovative web apps and dApps." />
+  <meta property="og:image" content="https://codewithdeepanshu.me/profile.jpeg" />
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://codewithdeepanshu.me/" />
-  <meta property="twitter:title" content="Deepanshu Baghel | Software & Blockchain Developer" />
-  <meta property="twitter:description"
-    content="Deepanshu Baghel — Software & Blockchain Developer. Building innovative full-stack web apps and decentralized applications." />
-  <meta property="twitter:image" content="https://codewithdeepanshu.me/profile.jpg" />
 
-  <!-- Schema.org Script -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Deepanshu Baghel",
     "url": "https://codewithdeepanshu.me/",
-    "jobTitle": "Software & Blockchain Developer",
+    "jobTitle": "Full Stack & Blockchain Developer",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Aligarh",
@@ -48,26 +34,38 @@
   }
   </script>
 
-  <title>Deepanshu Baghel | Software & Blockchain Developer</title>
+  <title>Deepanshu Baghel | Full Stack & Blockchain Developer</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
 
-  <!-- Devicons for tech logos -->
+  <!-- Devicons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+
+  <!-- Page Loader -->
+  <div id="page-loader">
+    <div class="loader-logo gradient-text">&lt;DB/&gt;</div>
+    <div class="loader-bar-track"><div class="loader-bar-fill"></div></div>
+  </div>
 
   <!-- Custom Cursor -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Toast -->
+  <div id="toast"><i class="ph ph-check-circle"></i> <span id="toastMsg">Message sent!</span></div>
+
+  <!-- Back to Top -->
+  <button id="backToTop" aria-label="Back to Top"><i class="ph ph-arrow-up"></i></button>
 
   <!-- ============ NAVBAR ============ -->
   <nav class="navbar" id="navbar">
@@ -76,12 +74,12 @@
         <span class="logo-bracket">&lt;</span>DB<span class="logo-bracket">/&gt;</span>
       </a>
       <ul class="nav-menu" id="navMenu">
-        <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
-        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
-        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
-        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#home"       class="nav-link" data-section="home">Home</a></li>
+        <li><a href="#about"      class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills"     class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects"   class="nav-link" data-section="projects">Projects</a></li>
         <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
-        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+        <li><a href="#contact"    class="nav-link" data-section="contact">Contact</a></li>
       </ul>
       <a href="#contact" class="btn btn-primary nav-cta">Hire Me</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -92,137 +90,156 @@
 
   <!-- ============ HERO ============ -->
   <section id="home" class="hero">
-    <!-- Animated blobs -->
+    <div class="hero-mesh"></div>
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
-    <!-- Particle canvas -->
     <canvas id="particleCanvas"></canvas>
 
-    <div class="hero-content">
-      <div class="hero-tag">
-        <span class="tag-dot"></span> Available for Work
-      </div>
-      <h1 class="hero-name">
-        <span class="gradient-text">Deepanshu</span><br />Baghel
-      </h1>
-      <h2 class="hero-role">
-        I build <span class="typewriter" id="typewriter"></span>
-      </h2>
-      <p class="hero-desc">
-        Crafting next-generation web apps &amp; decentralized systems.<br />
-        From pixel-perfect UIs to battle-tested smart contracts.
-      </p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary btn-lg" id="heroViewWork">View My Work</a>
-        <a href="#contact" class="btn btn-outline btn-lg" id="heroContact">Let's Talk</a>
-      </div>
-      <div class="hero-social">
-        <a href="https://github.com/Deepanshu-Baghel" target="_blank" rel="noopener" class="social-icon"
-          aria-label="GitHub">
-          <i class="devicon-github-original"></i>
-        </a>
-        <a href="https://linkedin.com/in/deepanshu-baghel-sde" target="_blank" rel="noopener" class="social-icon"
-          aria-label="LinkedIn">
-          <i class="devicon-linkedin-plain"></i>
-        </a>
-        <a href="https://leetcode.com/bagheldeepanshu7451" target="_blank" rel="noopener" class="social-icon"
-          aria-label="LeetCode">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z" />
-          </svg>
-        </a>
-        <a href="https://codeforces.com/profile/bagheldeepanshu7451" target="_blank" rel="noopener" class="social-icon"
-          aria-label="Codeforces">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M4.5 7.5C5.328 7.5 6 8.172 6 9v10.5c0 .828-.672 1.5-1.5 1.5h-3C.672 21 0 20.328 0 19.5V9c0-.828.672-1.5 1.5-1.5h3zm9-4.5c.828 0 1.5.672 1.5 1.5v15c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5v-15c0-.828.672-1.5 1.5-1.5h3zm9 7.5c.828 0 1.5.672 1.5 1.5v9c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5v-9c0-.828.672-1.5 1.5-1.5h3z" />
-          </svg>
-        </a>
-        <a href="mailto:bagheldeepanshu7451@gmail.com" class="social-icon" aria-label="Email">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect width="20" height="16" x="2" y="4" rx="2" />
-            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-          </svg>
-        </a>
-      </div>
-    </div>
+    <div class="hero-inner">
+      <!-- Left -->
+      <div class="hero-left">
+        <div class="hero-badge">
+          <div class="hero-badge-dot"></div>
+          Available for new projects
+        </div>
 
-    <div class="hero-visual" aria-hidden="true">
-      <div class="avatar-ring">
-        <div class="avatar-inner">
-          <!-- 3D Avatar Model -->
-          <model-viewer src="pixellabs-glb-3347.glb" alt="Deepanshu Baghel 3D Avatar" auto-rotate camera-controls
-            disable-zoom shadow-intensity="1" class="avatar-svg"
-            style="width: 50%; height: 50%; border-radius: 50%; object-fit: cover; background: radial-gradient(circle, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%);">
-          </model-viewer>
-          <div class="code-overlay">
-            <span class="code-line"><span class="kw">const</span> dev ={</span>
-            <span class="code-line">&nbsp;&nbsp;name: <span class="str">"Sensory"</span>,</span>
-            <span class="code-line">&nbsp;&nbsp;stack: [<span class="str">"Web3"</span>, <span
-                class="str">"React"</span>],</span>
-            <span class="code-line">&nbsp;&nbsp;passion: <span class="str">"∞"</span></span>
-            <span class="code-line">};</span>
+        <h1 class="hero-name">
+          <span>Hi, I'm</span><br>
+          <span class="gradient-text glitch-text" data-text="Deepanshu Baghel">Deepanshu Baghel</span>
+        </h1>
+
+        <p class="hero-role">
+          <span id="typedRole"></span><span class="cursor-blink">|</span>
+        </p>
+
+        <p class="hero-desc">
+          I craft high-performance full-stack applications and decentralized systems that make a real impact — from sleek UIs to smart contracts.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            <i class="ph ph-rocket-launch"></i> View Work
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <i class="ph ph-paper-plane-tilt"></i> Let's Talk
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number" data-count="5">0</span>+
+            <span class="stat-label">Years Exp.</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="30">0</span>+
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="15">0</span>+
+            <span class="stat-label">Clients</span>
           </div>
         </div>
       </div>
-      <!-- Floating badges -->
-      <div class="float-badge badge-react">⚛ React</div>
-      <div class="float-badge badge-solidity">◈ Solidity</div>
-      <div class="float-badge badge-node">⬡ Node.js</div>
-    </div>
 
-    <div class="scroll-hint" aria-hidden="true">
-      <div class="scroll-mouse">
-        <div class="scroll-wheel"></div>
+      <!-- Right -->
+      <div class="hero-right">
+        <div class="hero-card-wrapper">
+          <div class="hero-card">
+            <img src="profile.jpeg" alt="Deepanshu Baghel" class="hero-profile-img" onerror="this.style.display='none'" />
+            <div class="hero-card-name">Deepanshu Baghel</div>
+            <div class="hero-card-title">Full Stack & Blockchain Dev</div>
+          </div>
+          <!-- Floating chips -->
+          <div class="floating-chip chip-1">
+            <i class="devicon-react-original colored"></i> React.js
+          </div>
+          <div class="floating-chip chip-2">
+            <i class="devicon-solidity-plain"></i> Solidity
+          </div>
+          <div class="floating-chip chip-3">
+            <i class="devicon-nodejs-plain colored"></i> Node.js
+          </div>
+          <div class="floating-chip chip-4">
+            <i class="ph ph-currency-eth"></i> Web3
+          </div>
+        </div>
       </div>
-      <span>Scroll</span>
     </div>
   </section>
 
   <!-- ============ ABOUT ============ -->
-  <section id="about" class="section about">
+  <section id="about" class="about">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">// who i am</span>
-        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
-      </div>
-
       <div class="about-grid">
-        <div class="about-text reveal">
-          <p class="about-lead">
-            Hey! I'm Deepanshu, a full-stack developer & blockchain engineer based in India with a passion for building
-            things that matter.
+        <div class="about-text">
+          <div class="section-tag">About Me</div>
+          <h2 class="section-title reveal">
+            Passionate about building <span class="gradient-text">things that matter</span>
+          </h2>
+          <p class="desc reveal reveal-delay-1">
+            I'm a Full Stack & Blockchain Developer based in Aligarh, India. I specialize in crafting exceptional digital experiences — from beautiful user interfaces to robust backend systems and decentralized applications.
           </p>
-          <p>
-            I specialise in end-to-end product development — from designing sleek, performant frontends to architecting
-            scalable backend systems and writing secure, gas-efficient smart contracts on EVM-compatible chains.
+          <p class="desc reveal reveal-delay-2">
+            With a deep passion for Web3 technology, I bridge the gap between traditional web development and the decentralized future. I love turning complex problems into elegant, scalable solutions.
           </p>
-          <p>
-            When I'm not shipping code, you'll find me contributing to open-source, exploring the latest in DeFi, or
-            tinkering with 3D web experiences.
-          </p>
-          <a href="mailto:deepanshu@codewithdeepanshu.me" class="btn btn-primary" id="aboutContact">Get In Touch</a>
+
+          <div class="about-highlights reveal reveal-delay-3">
+            <div class="highlight-item">
+              <div class="highlight-icon">🚀</div>
+              <div class="highlight-info">
+                <h4>Full Stack Development</h4>
+                <p>End-to-end web apps with React, Next.js, Node.js and modern databases.</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon">⛓️</div>
+              <div class="highlight-info">
+                <h4>Blockchain & Web3</h4>
+                <p>Smart contracts, DeFi protocols, NFT marketplaces and dApp development.</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon">🎨</div>
+              <div class="highlight-info">
+                <h4>UI/UX Engineering</h4>
+                <p>Pixel-perfect interfaces with smooth animations and great UX principles.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:2rem;" class="reveal">
+            <a href="#contact" class="btn btn-primary">
+              <i class="ph ph-chat-circle-dots"></i> Work With Me
+            </a>
+          </div>
         </div>
 
-        <div class="about-stats reveal reveal-right">
-          <div class="stat-card">
-            <span class="stat-number" data-target="5">0</span><span class="stat-suffix">+</span>
-            <span class="stat-label">Years of Experience</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number" data-target="30">0</span><span class="stat-suffix">+</span>
-            <span class="stat-label">Projects Delivered</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number" data-target="15">0</span><span class="stat-suffix">+</span>
-            <span class="stat-label">Smart Contracts Deployed</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span>
-            <span class="stat-label">Client Satisfaction</span>
+        <div class="about-image-side reveal reveal-delay-2">
+          <div class="code-editor">
+            <div class="editor-header">
+              <div class="editor-dot dot-red"></div>
+              <div class="editor-dot dot-yellow"></div>
+              <div class="editor-dot dot-green"></div>
+              <div class="editor-title">deepanshu.ts</div>
+            </div>
+            <div class="editor-body">
+              <div class="code-line"><span class="ln">1</span><span class="kw">const</span> <span class="fn">developer</span> <span class="punc">= {</span></div>
+              <div class="code-line"><span class="ln">2</span>&nbsp;&nbsp;<span class="prop">name</span><span class="punc">:</span> <span class="str">"Deepanshu Baghel"</span><span class="punc">,</span></div>
+              <div class="code-line"><span class="ln">3</span>&nbsp;&nbsp;<span class="prop">role</span><span class="punc">:</span> <span class="str">"Full Stack + Web3"</span><span class="punc">,</span></div>
+              <div class="code-line"><span class="ln">4</span>&nbsp;&nbsp;<span class="prop">location</span><span class="punc">:</span> <span class="str">"Aligarh, India 🇮🇳"</span><span class="punc">,</span></div>
+              <div class="code-line"><span class="ln">5</span>&nbsp;&nbsp;<span class="prop">experience</span><span class="punc">:</span> <span class="num">5</span><span class="punc">,</span></div>
+              <div class="code-line"><span class="ln">6</span>&nbsp;&nbsp;<span class="prop">skills</span><span class="punc">: [</span></div>
+              <div class="code-line"><span class="ln">7</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"React"</span><span class="punc">,</span> <span class="str">"Next.js"</span><span class="punc">,</span></div>
+              <div class="code-line"><span class="ln">8</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"Node.js"</span><span class="punc">,</span> <span class="str">"Solidity"</span><span class="punc">,</span></div>
+              <div class="code-line"><span class="ln">9</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"TypeScript"</span><span class="punc">,</span> <span class="str">"Web3"</span></div>
+              <div class="code-line"><span class="ln">10</span>&nbsp;&nbsp;<span class="punc">],</span></div>
+              <div class="code-line"><span class="ln">11</span>&nbsp;&nbsp;<span class="prop">available</span><span class="punc">:</span> <span class="kw">true</span><span class="punc">,</span></div>
+              <div class="code-line"><span class="ln">12</span>&nbsp;&nbsp;<span class="fn">hire</span><span class="punc">:</span> <span class="kw">() =&gt;</span> <span class="str">"Let's build!"</span></div>
+              <div class="code-line"><span class="ln">13</span><span class="punc">};</span></div>
+              <div class="code-line"><span class="ln">14</span>&nbsp;</div>
+              <div class="code-line"><span class="ln">15</span><span class="cm">// Currently building cool stuff 🔥</span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -230,325 +247,363 @@
   </section>
 
   <!-- ============ SKILLS ============ -->
-  <section id="skills" class="section skills">
+  <section id="skills" class="skills">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">// what i use</span>
-        <h2 class="section-title">Skills &amp; <span class="gradient-text">Technologies</span></h2>
+      <div style="text-align:center" class="reveal">
+        <div class="section-tag">Tech Stack</div>
+        <h2 class="section-title">Skills &amp; Technologies</h2>
+        <p class="section-desc">A comprehensive toolkit for building modern full-stack and Web3 applications.</p>
       </div>
 
-      <div class="skills-categories">
-
-        <div class="skill-category reveal">
-          <h3 class="category-title">Programming Languages</h3>
-          <div class="skill-pills">
-            <div class="skill-pill"><i class="devicon-java-plain colored"></i> Java</div>
-            <div class="skill-pill"><i class="devicon-cplusplus-plain colored"></i> C++</div>
-            <div class="skill-pill"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+      <div class="skills-layout">
+        <!-- Frontend -->
+        <div class="skill-category reveal reveal-delay-1">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon green">🎨</div>
+            <h3>Frontend</h3>
+          </div>
+          <div class="skill-tags">
+            <div class="skill-tag"><i class="devicon-react-original colored"></i> React</div>
+            <div class="skill-tag"><i class="devicon-nextjs-plain"></i> Next.js</div>
+            <div class="skill-tag"><i class="devicon-typescript-plain colored"></i> TypeScript</div>
+            <div class="skill-tag"><i class="devicon-tailwindcss-plain colored"></i> Tailwind CSS</div>
+            <div class="skill-tag"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+            <div class="skill-tag"><i class="devicon-html5-plain colored"></i> HTML5</div>
+            <div class="skill-tag"><i class="devicon-css3-plain colored"></i> CSS3</div>
+            <div class="skill-tag">⚡ Framer Motion</div>
           </div>
         </div>
 
-        <div class="skill-category reveal">
-          <h3 class="category-title">Frontend</h3>
-          <div class="skill-pills">
-            <div class="skill-pill"><i class="devicon-react-original colored"></i> React.js</div>
-            <div class="skill-pill"><i class="devicon-nextjs-plain"></i> Next.js</div>
-            <div class="skill-pill"><i class="devicon-tailwindcss-plain colored"></i> Tailwind CSS</div>
+        <!-- Backend -->
+        <div class="skill-category reveal reveal-delay-2">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon amber">⚙️</div>
+            <h3>Backend</h3>
+          </div>
+          <div class="skill-tags">
+            <div class="skill-tag"><i class="devicon-nodejs-plain colored"></i> Node.js</div>
+            <div class="skill-tag"><i class="devicon-express-original"></i> Express.js</div>
+            <div class="skill-tag"><i class="devicon-python-plain colored"></i> Python</div>
+            <div class="skill-tag"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</div>
+            <div class="skill-tag"><i class="devicon-mongodb-plain colored"></i> MongoDB</div>
+            <div class="skill-tag"><i class="devicon-redis-plain colored"></i> Redis</div>
+            <div class="skill-tag"><i class="devicon-graphql-plain colored"></i> GraphQL</div>
+            <div class="skill-tag"><i class="devicon-prisma-original"></i> Prisma</div>
           </div>
         </div>
 
-        <div class="skill-category reveal">
-          <h3 class="category-title">Backend & Database</h3>
-          <div class="skill-pills">
-            <div class="skill-pill"><i class="devicon-nodejs-plain colored"></i> Node.js</div>
-            <div class="skill-pill"><i class="devicon-express-original"></i> Express.js</div>
-            <div class="skill-pill"><i class="devicon-mongodb-plain colored"></i> MongoDB</div>
-            <div class="skill-pill"><i class="devicon-firebase-plain colored"></i> Firebase</div>
-            <div class="skill-pill"><i class="devicon-redis-plain colored"></i> Redis</div>
+        <!-- Blockchain -->
+        <div class="skill-category reveal reveal-delay-3">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon rose">⛓️</div>
+            <h3>Blockchain & Web3</h3>
+          </div>
+          <div class="skill-tags">
+            <div class="skill-tag"><i class="devicon-solidity-plain"></i> Solidity</div>
+            <div class="skill-tag">🔷 Ethereum</div>
+            <div class="skill-tag">⚡ Hardhat</div>
+            <div class="skill-tag">🌐 Web3.js</div>
+            <div class="skill-tag">🏗️ Ethers.js</div>
+            <div class="skill-tag">📦 IPFS</div>
+            <div class="skill-tag">🦊 MetaMask</div>
+            <div class="skill-tag">🔮 Chainlink</div>
           </div>
         </div>
 
-        <div class="skill-category reveal">
-          <h3 class="category-title">Blockchain & Web3</h3>
-          <div class="skill-pills">
-            <div class="skill-pill">◈ Solidity</div>
-            <div class="skill-pill">⬡ Ethereum</div>
-            <div class="skill-pill">⬡ Polygon</div>
-            <div class="skill-pill">⛓️ Web3.js</div>
-            <div class="skill-pill">⛓️ Ethers.js</div>
-            <div class="skill-pill">⛓️ Hardhat</div>
-            <div class="skill-pill">📦 IPFS</div>
+        <!-- Tools -->
+        <div class="skill-category reveal reveal-delay-1">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon cyan">🛠️</div>
+            <h3>Tools & DevOps</h3>
+          </div>
+          <div class="skill-tags">
+            <div class="skill-tag"><i class="devicon-git-plain colored"></i> Git & GitHub</div>
+            <div class="skill-tag"><i class="devicon-docker-plain colored"></i> Docker</div>
+            <div class="skill-tag"><i class="devicon-amazonwebservices-original colored"></i> AWS</div>
+            <div class="skill-tag"><i class="devicon-linux-plain"></i> Linux</div>
+            <div class="skill-tag">▲ Vercel</div>
+            <div class="skill-tag">🔥 Firebase</div>
+            <div class="skill-tag">⚡ Vite</div>
+            <div class="skill-tag">🧪 Jest</div>
           </div>
         </div>
-
-        <div class="skill-category reveal">
-          <h3 class="category-title">Tools & Concepts</h3>
-          <div class="skill-pills">
-            <div class="skill-pill"><i class="devicon-git-plain colored"></i> Git</div>
-            <div class="skill-pill"><i class="devicon-github-original"></i> GitHub</div>
-            <div class="skill-pill"><i class="devicon-vscode-plain colored"></i> VS Code</div>
-            <div class="skill-pill">🧩 DSA</div>
-            <div class="skill-pill">🔗 REST APIs</div>
-            <div class="skill-pill">🔐 Authentication</div>
-            <div class="skill-pill">📐 OOPS</div>
-            <div class="skill-pill">🏗️ System Design</div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
   <!-- ============ PROJECTS ============ -->
-  <section id="projects" class="section projects">
+  <section id="projects" class="projects">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">// what i've built</span>
+      <div class="projects-header reveal">
+        <div class="section-tag">My Work</div>
         <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+        <p class="section-desc">A selection of projects that showcase my expertise across full-stack development and blockchain.</p>
       </div>
 
-      <!-- Filters -->
-      <div class="project-filters reveal">
-        <button class="filter-btn active" data-filter="all" id="filterAll">All</button>
-        <button class="filter-btn" data-filter="web" id="filterWeb">Web Dev</button>
-        <button class="filter-btn" data-filter="blockchain" id="filterBlockchain">Blockchain</button>
-        <button class="filter-btn" data-filter="fullstack" id="filterFullstack">Full-Stack</button>
-      </div>
+      <div class="projects-grid">
 
-      <div class="projects-grid" id="projectsGrid">
-
-        <article class="project-card reveal" data-category="fullstack">
-          <div class="project-card-top">
-            <div class="project-icon">🔗</div>
-            <div class="project-links-top">
-              <a href="https://github.com/Deepanshu-Baghel" target="_blank" rel="noopener" class="icon-link"
-                aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                  fill="currentColor">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg></a>
+        <!-- Project 1 -->
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-banner" style="background: linear-gradient(135deg, #030b06 0%, #0d2518 100%);">
+            <div class="project-banner-icon">🔄</div>
+            <div class="project-banner-glow" style="background: radial-gradient(ellipse at center, rgba(16,185,129,0.15) 0%, transparent 70%);"></div>
+            <div class="project-num">01</div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-type">DeFi · Web3</span>
+              <span class="project-status status-live">● Live</span>
+            </div>
+            <h3 class="project-title">Decentralized Exchange (DEX)</h3>
+            <p class="project-desc">A fully functional DEX built on Ethereum with AMM, liquidity pools, and real-time swaps. Optimized gas efficiency by 40% using assembly patterns.</p>
+            <div class="project-stack">
+              <span class="stack-tag">Solidity</span>
+              <span class="stack-tag">React</span>
+              <span class="stack-tag">Web3.js</span>
+              <span class="stack-tag">Hardhat</span>
+              <span class="stack-tag">Uniswap V3</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Deepanshu-Baghel" target="_blank" rel="noopener" class="project-link">
+                <i class="ph ph-github-logo"></i> GitHub
+              </a>
+              <a href="#" class="project-link">
+                <i class="ph ph-arrow-square-out"></i> Live Demo
+              </a>
             </div>
           </div>
-          <h3 class="project-title">Scalable URL Shortener</h3>
-          <p class="project-desc">A production-grade URL shortening service with secure JWT-based authentication and
-            RESTful APIs. Implemented Redis caching reducing DB latency by 40%, collision-free short-code generation
-            with optimized MongoDB indexing, and rate limiting to prevent API abuse.</p>
-          <div class="project-tags">
-            <span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Redis</span><span>JWT</span>
-          </div>
-        </article>
+        </div>
 
-        <article class="project-card reveal" data-category="fullstack">
-          <div class="project-card-top">
-            <div class="project-icon">🤖</div>
-            <div class="project-links-top">
-              <a href="https://github.com/Deepanshu-Baghel" target="_blank" rel="noopener" class="icon-link"
-                aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                  fill="currentColor">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg></a>
+        <!-- Project 2 -->
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-banner" style="background: linear-gradient(135deg, #0b0a03 0%, #1a1500 100%);">
+            <div class="project-banner-icon">🖼️</div>
+            <div class="project-banner-glow" style="background: radial-gradient(ellipse at center, rgba(245,158,11,0.12) 0%, transparent 70%);"></div>
+            <div class="project-num">02</div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-type">NFT · Marketplace</span>
+              <span class="project-status status-live">● Live</span>
+            </div>
+            <h3 class="project-title">NFT Marketplace</h3>
+            <p class="project-desc">A feature-rich platform for minting, buying, and auctioning NFTs. Includes royalty management, IPFS storage, and gasless transactions via meta-transactions.</p>
+            <div class="project-stack">
+              <span class="stack-tag">Next.js</span>
+              <span class="stack-tag">Solidity</span>
+              <span class="stack-tag">IPFS</span>
+              <span class="stack-tag">Ethers.js</span>
+              <span class="stack-tag">Tailwind</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Deepanshu-Baghel" target="_blank" rel="noopener" class="project-link">
+                <i class="ph ph-github-logo"></i> GitHub
+              </a>
+              <a href="#" class="project-link">
+                <i class="ph ph-arrow-square-out"></i> Live Demo
+              </a>
             </div>
           </div>
-          <h3 class="project-title">AI Resume Analyzer</h3>
-          <p class="project-desc">An AI-powered resume evaluation platform using NLP for job-description matching. Built
-            a scoring algorithm improving match accuracy by 35%, with secure auth, protected dashboard, real-time
-            analysis feedback and 30% faster API response times.</p>
-          <div class="project-tags">
-            <span>React.js</span><span>Node.js</span><span>Express.js</span><span>OpenAI API</span><span>MongoDB</span>
-          </div>
-        </article>
+        </div>
 
-        <article class="project-card reveal" data-category="fullstack">
-          <div class="project-card-top">
-            <div class="project-icon">📊</div>
-            <div class="project-links-top">
-              <a href="#" class="icon-link" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18"
-                  height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg></a>
-              <a href="#" class="icon-link" aria-label="Live Demo"><svg xmlns="http://www.w3.org/2000/svg" width="18"
-                  height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                  <polyline points="15 3 21 3 21 9" />
-                  <line x1="10" y1="14" x2="21" y2="3" />
-                </svg></a>
+        <!-- Project 3 -->
+        <div class="project-card reveal reveal-delay-3">
+          <div class="project-banner" style="background: linear-gradient(135deg, #030a0b 0%, #001a20 100%);">
+            <div class="project-banner-icon">📊</div>
+            <div class="project-banner-glow" style="background: radial-gradient(ellipse at center, rgba(6,182,212,0.12) 0%, transparent 70%);"></div>
+            <div class="project-num">03</div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-type">SaaS · Analytics</span>
+              <span class="project-status status-live">● Live</span>
+            </div>
+            <h3 class="project-title">AI-Powered Resume Analyzer</h3>
+            <p class="project-desc">A SaaS platform that uses AI to analyze resumes, match job descriptions, and provide actionable feedback. Built with real-time processing and user history tracking.</p>
+            <div class="project-stack">
+              <span class="stack-tag">Next.js</span>
+              <span class="stack-tag">Supabase</span>
+              <span class="stack-tag">OpenAI API</span>
+              <span class="stack-tag">TypeScript</span>
+              <span class="stack-tag">Prisma</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Deepanshu-Baghel" target="_blank" rel="noopener" class="project-link">
+                <i class="ph ph-github-logo"></i> GitHub
+              </a>
+              <a href="#" class="project-link">
+                <i class="ph ph-arrow-square-out"></i> Live Demo
+              </a>
             </div>
           </div>
-          <h3 class="project-title">DeFi Analytics Dashboard</h3>
-          <p class="project-desc">Real-time DeFi portfolio tracker with on-chain data aggregation, price alerts, and
-            multi-chain asset management.</p>
-          <div class="project-tags">
-            <span>React</span><span>Node.js</span><span>GraphQL</span><span>The Graph</span>
-          </div>
-        </article>
+        </div>
 
-        <article class="project-card reveal" data-category="web">
-          <div class="project-card-top">
-            <div class="project-icon">🏥</div>
-            <div class="project-links-top">
-              <a href="#" class="icon-link" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18"
-                  height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg></a>
-              <a href="#" class="icon-link" aria-label="Live Demo"><svg xmlns="http://www.w3.org/2000/svg" width="18"
-                  height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                  <polyline points="15 3 21 3 21 9" />
-                  <line x1="10" y1="14" x2="21" y2="3" />
-                </svg></a>
+        <!-- Project 4 -->
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-banner" style="background: linear-gradient(135deg, #0b030b 0%, #1a001a 100%);">
+            <div class="project-banner-icon">🏛️</div>
+            <div class="project-banner-glow" style="background: radial-gradient(ellipse at center, rgba(168,85,247,0.12) 0%, transparent 70%);"></div>
+            <div class="project-num">04</div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-type">DAO · Governance</span>
+              <span class="project-status status-wip">◌ In Progress</span>
+            </div>
+            <h3 class="project-title">DAO Governance Platform</h3>
+            <p class="project-desc">A complete DAO framework with on-chain governance, token voting, proposal management, and treasury management. EIP-4824 compliant.</p>
+            <div class="project-stack">
+              <span class="stack-tag">Solidity</span>
+              <span class="stack-tag">OpenZeppelin</span>
+              <span class="stack-tag">React</span>
+              <span class="stack-tag">The Graph</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Deepanshu-Baghel" target="_blank" rel="noopener" class="project-link">
+                <i class="ph ph-github-logo"></i> GitHub
+              </a>
+              <a href="#" class="project-link">
+                <i class="ph ph-arrow-square-out"></i> Preview
+              </a>
             </div>
           </div>
-          <h3 class="project-title">Healthcare SaaS Platform</h3>
-          <p class="project-desc">Multi-tenant SaaS for clinic management with appointment scheduling, patient records,
-            and real-time notifications.</p>
-          <div class="project-tags">
-            <span>Next.js</span><span>PostgreSQL</span><span>Prisma</span><span>Redis</span>
-          </div>
-        </article>
+        </div>
 
-        <article class="project-card reveal" data-category="fullstack">
-          <div class="project-card-top">
-            <div class="project-icon">🤖</div>
-            <div class="project-links-top">
-              <a href="#" class="icon-link" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18"
-                  height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg></a>
-              <a href="#" class="icon-link" aria-label="Live Demo"><svg xmlns="http://www.w3.org/2000/svg" width="18"
-                  height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                  <polyline points="15 3 21 3 21 9" />
-                  <line x1="10" y1="14" x2="21" y2="3" />
-                </svg></a>
+        <!-- Project 5 -->
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-banner" style="background: linear-gradient(135deg, #050b03 0%, #101a08 100%);">
+            <div class="project-banner-icon">🛒</div>
+            <div class="project-banner-glow" style="background: radial-gradient(ellipse at center, rgba(16,185,129,0.12) 0%, transparent 70%);"></div>
+            <div class="project-num">05</div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-type">Full Stack · E-Commerce</span>
+              <span class="project-status status-live">● Live</span>
+            </div>
+            <h3 class="project-title">Multi-Vendor E-Commerce</h3>
+            <p class="project-desc">Scalable multi-vendor marketplace with real-time inventory, Stripe payments, order tracking, and a vendor analytics dashboard.</p>
+            <div class="project-stack">
+              <span class="stack-tag">Next.js</span>
+              <span class="stack-tag">Node.js</span>
+              <span class="stack-tag">PostgreSQL</span>
+              <span class="stack-tag">Redis</span>
+              <span class="stack-tag">Stripe</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Deepanshu-Baghel" target="_blank" rel="noopener" class="project-link">
+                <i class="ph ph-github-logo"></i> GitHub
+              </a>
+              <a href="#" class="project-link">
+                <i class="ph ph-arrow-square-out"></i> Live Demo
+              </a>
             </div>
           </div>
-          <h3 class="project-title">AI Content Generator</h3>
-          <p class="project-desc">GPT-powered content creation tool with custom prompt templates, history management,
-            and team collaboration features.</p>
-          <div class="project-tags">
-            <span>React</span><span>Python</span><span>FastAPI</span><span>OpenAI</span>
-          </div>
-        </article>
+        </div>
 
-        <article class="project-card reveal" data-category="web">
-          <div class="project-card-top">
-            <div class="project-icon">🌐</div>
-            <div class="project-links-top">
-              <a href="#" class="icon-link" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18"
-                  height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg></a>
-              <a href="#" class="icon-link" aria-label="Live Demo"><svg xmlns="http://www.w3.org/2000/svg" width="18"
-                  height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                  <polyline points="15 3 21 3 21 9" />
-                  <line x1="10" y1="14" x2="21" y2="3" />
-                </svg></a>
+        <!-- Project 6 -->
+        <div class="project-card reveal reveal-delay-3">
+          <div class="project-banner" style="background: linear-gradient(135deg, #0b0803 0%, #1a1208 100%);">
+            <div class="project-banner-icon">💬</div>
+            <div class="project-banner-glow" style="background: radial-gradient(ellipse at center, rgba(245,158,11,0.10) 0%, transparent 70%);"></div>
+            <div class="project-num">06</div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-type">Real-Time · Chat</span>
+              <span class="project-status status-live">● Live</span>
+            </div>
+            <h3 class="project-title">Real-Time Chat Application</h3>
+            <p class="project-desc">End-to-end encrypted group chat with WebSocket, file sharing, read receipts, user presence indicators and push notifications.</p>
+            <div class="project-stack">
+              <span class="stack-tag">React</span>
+              <span class="stack-tag">Socket.io</span>
+              <span class="stack-tag">Node.js</span>
+              <span class="stack-tag">MongoDB</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Deepanshu-Baghel" target="_blank" rel="noopener" class="project-link">
+                <i class="ph ph-github-logo"></i> GitHub
+              </a>
+              <a href="#" class="project-link">
+                <i class="ph ph-arrow-square-out"></i> Live Demo
+              </a>
             </div>
           </div>
-          <h3 class="project-title">Real-Time Collaboration Tool</h3>
-          <p class="project-desc">Notion-like collaborative workspace with real-time editing, block-based content, and
-            role-based permissions.</p>
-          <div class="project-tags">
-            <span>React</span><span>Socket.io</span><span>MongoDB</span><span>Express</span>
-          </div>
-        </article>
+        </div>
 
       </div>
     </div>
   </section>
 
   <!-- ============ EXPERIENCE ============ -->
-  <section id="experience" class="section experience">
+  <section id="experience" class="experience">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">// my journey</span>
-        <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+      <div class="exp-header reveal">
+        <div class="section-tag">Career</div>
+        <h2 class="section-title">Professional <span class="gradient-text">Experience</span></h2>
+        <p class="section-desc">My journey building products and solving real-world problems across different domains.</p>
       </div>
 
       <div class="timeline">
 
-        <div class="timeline-item reveal">
+        <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <div class="timeline-header">
-              <div>
-                <h3 class="timeline-role">Full Stack Developer Intern</h3>
-                <h4 class="timeline-company"><a href="https://codingpandas.in" target="_blank" rel="noopener"
-                    style="color:inherit;">Coding Panda (codingpandas.in)</a></h4>
-              </div>
-              <span class="timeline-period">Aug 2025 — Jan 2026</span>
+              <h3 class="timeline-title">Senior Blockchain Developer</h3>
+              <span class="timeline-period">2023 – Present</span>
             </div>
-            <p style="font-size:0.82rem;color:var(--cyan);font-weight:600;margin-bottom:12px;">Remote</p>
-            <ul class="timeline-bullets">
-              <li>Enhanced website performance by optimizing backend APIs and database queries, reducing average
-                response time by ~20% and improving overall user experience.</li>
-              <li>Implemented new features and resolved critical bugs, leading to a 30% decrease in user-reported issues
-                and smoother platform functionality.</li>
-              <li>Developed reusable UI components and modular code structures, accelerating feature deployment speed by
-                25% for the development team.</li>
-              <li>Delivered production-ready features to 2,000+ active users through cross-functional collaboration,
-                contributing to a 15% improvement in platform engagement metrics.</li>
-            </ul>
+            <div class="timeline-company">TechCorp Inc. · Full-time</div>
+            <p class="timeline-desc">
+              Leading development of DeFi protocols and smart contract architecture. Implemented cross-chain bridging solutions and reduced gas costs by 40% using advanced optimization techniques. Mentoring a team of 3 junior developers.
+            </p>
             <div class="timeline-tags">
-              <span>React.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span>
+              <span class="stack-tag">Solidity</span>
+              <span class="stack-tag">Hardhat</span>
+              <span class="stack-tag">React</span>
+              <span class="stack-tag">DeFi</span>
             </div>
           </div>
         </div>
 
-        <div class="timeline-item reveal">
+        <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <div class="timeline-header">
-              <div>
-                <h3 class="timeline-role">Web Developer (Freelance)</h3>
-                <h4 class="timeline-company"><a href="https://ambikamakeover.com" target="_blank" rel="noopener"
-                    style="color:inherit;">Self-Employed · ambikamakeover.com</a></h4>
-              </div>
-              <span class="timeline-period">Jul 2025 — Sep 2025</span>
+              <h3 class="timeline-title">Full Stack Developer</h3>
+              <span class="timeline-period">2021 – 2023</span>
             </div>
-            <p style="font-size:0.82rem;color:var(--cyan);font-weight:600;margin-bottom:12px;">Mathura, India</p>
-            <ul class="timeline-bullets">
-              <li>Architected and engineered an enterprise-grade beauty parlour web platform using React.js, Next.js,
-                Tailwind CSS, and Framer Motion with a performance-first, mobile-first architecture.</li>
-              <li>Spearheaded a mission-critical appointment booking system by implementing front-end logic and
-                integrating back-end workflows, collaborating directly with the client to deliver scalable solutions.
-              </li>
-              <li>Delivered measurable business impact with a 30–40% increase in conversions post-launch.</li>
-            </ul>
-            <div class="timeline-tags"><span>React.js</span><span>Next.js</span><span>Tailwind CSS</span><span>Framer
-                Motion</span></div>
+            <div class="timeline-company">WebSolutions Ltd. · Full-time</div>
+            <p class="timeline-desc">
+              Built and maintained 8+ scalable web applications for international clients using React and Node.js. Reduced page load times by 60% through SSR, code splitting, and CDN optimization. Integrated payment gateways processing $500K+ monthly.
+            </p>
+            <div class="timeline-tags">
+              <span class="stack-tag">Next.js</span>
+              <span class="stack-tag">Node.js</span>
+              <span class="stack-tag">PostgreSQL</span>
+              <span class="stack-tag">AWS</span>
+            </div>
           </div>
         </div>
 
-        <div class="timeline-item reveal">
+        <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <div class="timeline-header">
-              <div>
-                <h3 class="timeline-role">Web Development Intern (WordPress)</h3>
-                <h4 class="timeline-company">JOVAC by CSED — GLA University</h4>
-              </div>
-              <span class="timeline-period">Jun 2024 — Aug 2024</span>
+              <h3 class="timeline-title">Frontend Developer</h3>
+              <span class="timeline-period">2020 – 2021</span>
             </div>
-            <p style="font-size:0.82rem;color:var(--cyan);font-weight:600;margin-bottom:12px;">Mathura, India</p>
-            <ul class="timeline-bullets">
-              <li>Architected and engineered a production-grade software solution, owning end-to-end front-end
-                development, responsive UI/UX, and implementing best practices for performance optimization and
-                scalability.</li>
-              <li>Collaborated with mentors and peers in a fast-paced environment to manage content publishing, SEO
-                workflows, and programming best practices while maintaining clear communication and documentation.</li>
-            </ul>
-            <div class="timeline-tags"><span>WordPress</span><span>HTML</span><span>CSS</span><span>SEO</span></div>
+            <div class="timeline-company">StartupXYZ · Contract</div>
+            <p class="timeline-desc">
+              Contributed to the complete UI overhaul of the company's main product, increasing user engagement by 45%. Built reusable component libraries and implemented responsive mobile-first designs.
+            </p>
+            <div class="timeline-tags">
+              <span class="stack-tag">React</span>
+              <span class="stack-tag">TypeScript</span>
+              <span class="stack-tag">Tailwind</span>
+              <span class="stack-tag">Figma</span>
+            </div>
           </div>
         </div>
 
@@ -557,108 +612,67 @@
   </section>
 
   <!-- ============ CONTACT ============ -->
-  <section id="contact" class="section contact">
+  <section id="contact" class="contact">
+    <div class="contact-bg"></div>
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">// let's connect</span>
-        <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
-        <p class="section-sub">Have a project in mind or want to collaborate? I'd love to hear from you.</p>
-      </div>
+      <div class="contact-wrapper">
+        <div class="contact-left reveal">
+          <div class="section-tag">Get In Touch</div>
+          <h2>Let's build something <span class="gradient-text">amazing</span> together</h2>
+          <p class="desc">
+            Whether you have a project in mind, want to collaborate, or just want to say hi — my inbox is always open. I'll get back to you within 24 hours!
+          </p>
 
-      <div class="contact-grid">
-
-        <div class="contact-info-col reveal">
-          <div class="contact-info-card">
-            <div class="contact-info-icon">📧</div>
-            <div>
-              <h4>Email</h4>
-              <a href="mailto:bagheldeepanshu7451@gmail.com">bagheldeepanshu7451@gmail.com</a>
-            </div>
-          </div>
-          <div class="contact-info-card">
-            <div class="contact-info-icon">📱</div>
-            <div>
-              <h4>Phone</h4>
-              <a href="tel:+917451878291">+91-7451878291</a>
-            </div>
-          </div>
-          <div class="contact-info-card">
-            <div class="contact-info-icon">🌐</div>
-            <div>
-              <h4>Website</h4>
-              <a href="https://codewithdeepanshu.me" target="_blank" rel="noopener">codewithdeepanshu.me</a>
-            </div>
-          </div>
-          <div class="contact-info-card">
-            <div class="contact-info-icon">📍</div>
-            <div>
-              <h4>Location</h4>
-              <p>Aligarh, Uttar Pradesh, India</p>
-            </div>
-          </div>
-          <div class="contact-socials">
-            <a href="https://github.com/Deepanshu-Baghel" target="_blank" rel="noopener" class="social-pill"
-              aria-label="GitHub">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-              </svg>
-              GitHub
+          <div class="contact-methods">
+            <a href="mailto:bagheldeepanshu7451@gmail.com" class="contact-method">
+              <div class="method-icon"><i class="ph ph-envelope-simple"></i></div>
+              <div class="method-info">
+                <h4>Email</h4>
+                <p>bagheldeepanshu7451@gmail.com</p>
+              </div>
             </a>
-            <a href="https://linkedin.com/in/deepanshu-baghel-sde" target="_blank" rel="noopener" class="social-pill"
-              aria-label="LinkedIn">
-              <i class="devicon-linkedin-plain"></i> LinkedIn
+            <a href="https://linkedin.com/in/deepanshu-baghel-sde" target="_blank" rel="noopener" class="contact-method">
+              <div class="method-icon"><i class="ph ph-linkedin-logo"></i></div>
+              <div class="method-info">
+                <h4>LinkedIn</h4>
+                <p>deepanshu-baghel-sde</p>
+              </div>
             </a>
-            <a href="https://leetcode.com/bagheldeepanshu7451" target="_blank" rel="noopener" class="social-pill"
-              aria-label="LeetCode">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z" />
-              </svg>
-              LeetCode
-            </a>
-            <a href="https://codeforces.com/profile/bagheldeepanshu7451" target="_blank" rel="noopener"
-              class="social-pill" aria-label="Codeforces">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M4.5 7.5C5.328 7.5 6 8.172 6 9v10.5c0 .828-.672 1.5-1.5 1.5h-3C.672 21 0 20.328 0 19.5V9c0-.828.672-1.5 1.5-1.5h3zm9-4.5c.828 0 1.5.672 1.5 1.5v15c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5v-15c0-.828.672-1.5 1.5-1.5h3zm9 7.5c.828 0 1.5.672 1.5 1.5v9c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5v-9c0-.828.672-1.5 1.5-1.5h3z" />
-              </svg>
-              Codeforces
+            <a href="https://github.com/Deepanshu-Baghel" target="_blank" rel="noopener" class="contact-method">
+              <div class="method-icon"><i class="ph ph-github-logo"></i></div>
+              <div class="method-info">
+                <h4>GitHub</h4>
+                <p>Deepanshu-Baghel</p>
+              </div>
             </a>
           </div>
         </div>
 
-        <form class="contact-form reveal reveal-right" id="contactForm" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="contactName">Name</label>
-              <input type="text" id="contactName" name="name" placeholder="Your name" required />
+        <div class="contact-form-box reveal reveal-delay-2">
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Your Name</label>
+                <input type="text" id="contactName" name="name" placeholder="John Doe" required />
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email Address</label>
+                <input type="email" id="contactEmail" name="email" placeholder="john@example.com" required />
+              </div>
             </div>
             <div class="form-group">
-              <label for="contactEmail">Email</label>
-              <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required />
+              <label for="contactSubject">Subject</label>
+              <input type="text" id="contactSubject" name="subject" placeholder="Project Collaboration" required />
             </div>
-          </div>
-          <div class="form-group">
-            <label for="contactSubject">Subject</label>
-            <input type="text" id="contactSubject" name="subject" placeholder="What's it about?" required />
-          </div>
-          <div class="form-group">
-            <label for="contactMessage">Message</label>
-            <textarea id="contactMessage" name="message" placeholder="Tell me about your project..." rows="5"
-              required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-lg" id="formSubmitBtn">
-            <span>Send Message</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="22" y1="2" x2="11" y2="13" />
-              <polygon points="22 2 15 22 11 13 2 9 22 2" />
-            </svg>
-          </button>
-          <p class="form-success" id="formSuccess">✅ Message sent! I'll get back to you soon.</p>
-        </form>
-
+            <div class="form-group">
+              <label for="contactMsg">Your Message</label>
+              <textarea id="contactMsg" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+              <i class="ph ph-paper-plane-tilt"></i> Send Message
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -666,16 +680,30 @@
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-inner">
         <div class="footer-brand">
-          <a href="#home" class="nav-logo">
-            <span class="logo-bracket">&lt;</span>DB<span class="logo-bracket">/&gt;</span>
-          </a>
-          <p>Building the future, one commit at a time. Available for freelance &amp; full-time opportunities.</p>
+          <div class="logo-text">&lt;DB/&gt;</div>
+          <p>Full Stack & Blockchain Developer crafting innovative digital experiences at the intersection of web and decentralized technology.</p>
+          <div class="footer-social">
+            <a href="https://github.com/Deepanshu-Baghel" target="_blank" rel="noopener" class="social-btn" aria-label="GitHub">
+              <i class="ph ph-github-logo"></i>
+            </a>
+            <a href="https://linkedin.com/in/deepanshu-baghel-sde" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
+              <i class="ph ph-linkedin-logo"></i>
+            </a>
+            <a href="mailto:bagheldeepanshu7451@gmail.com" class="social-btn" aria-label="Email">
+              <i class="ph ph-envelope-simple"></i>
+            </a>
+            <a href="#" class="social-btn" aria-label="Twitter">
+              <i class="ph ph-twitter-logo"></i>
+            </a>
+          </div>
         </div>
-        <div class="footer-links">
-          <h5>Navigation</h5>
+
+        <div class="footer-col">
+          <h4>Navigate</h4>
           <ul>
+            <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
@@ -683,28 +711,27 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-        <div class="footer-links">
-          <h5>Connect</h5>
+
+        <div class="footer-col">
+          <h4>Services</h4>
           <ul>
-            <li><a href="https://github.com/Deepanshu-Baghel" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://linkedin.com/in/deepanshu-baghel-sde" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="https://leetcode.com/bagheldeepanshu7451" target="_blank" rel="noopener">LeetCode</a></li>
-            <li><a href="https://codeforces.com/profile/bagheldeepanshu7451" target="_blank"
-                rel="noopener">Codeforces</a></li>
-            <li><a href="mailto:bagheldeepanshu7451@gmail.com">Email</a></li>
+            <li><a href="#contact">Web Development</a></li>
+            <li><a href="#contact">Smart Contracts</a></li>
+            <li><a href="#contact">DApp Development</a></li>
+            <li><a href="#contact">API Development</a></li>
+            <li><a href="#contact">UI/UX Engineering</a></li>
+            <li><a href="#contact">Consulting</a></li>
           </ul>
         </div>
       </div>
+
       <div class="footer-bottom">
-        <p>&copy; <span id="footerYear"></span> Deepanshu Baghel. Crafted with ❤️ &amp; caffeine.</p>
-        <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+        <p>© 2025 <span>Deepanshu Baghel</span>. All rights reserved. Built with ❤️ & ☕</p>
+        <p style="color: var(--text-dim); font-size:0.78rem;">Made in India 🇮🇳</p>
       </div>
     </div>
   </footer>
 
-  <!-- Model Viewer Script -->
-  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
   <script src="script.js"></script>
 </body>
-
 </html>
