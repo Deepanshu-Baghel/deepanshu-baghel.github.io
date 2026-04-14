@@ -1,46 +1,85 @@
 /* ============================================
    DEEPANSHU BAGHEL — PORTFOLIO CSS
-   Theme: Midnight Green + Amber / Obsidian Black
+   Theme: Indigo + Pink / Deep Black (hibrkraft-inspired)
    ============================================ */
 
 /* ---------- CSS Variables ---------- */
 :root {
-  --green: #10b981;
-  --green-light: #6ee7b7;
-  --green-dark: #059669;
-  --amber: #f59e0b;
-  --amber-light: #fcd34d;
-  --amber-dark: #d97706;
+  /* Core brand colours — Indigo → Pink */
+  --indigo: #4f46e5;
+  --indigo-light: #818cf8;
+  --indigo-dark: #3730a3;
+  --pink: #ec4899;
+  --pink-light: #f9a8d4;
+  --pink-dark: #be185d;
   --rose: #f43f5e;
 
-  --bg: #030b06;
-  --bg-2: #071a0e;
-  --bg-3: #0d2518;
-  --surface: rgba(16, 185, 129, 0.05);
-  --surface-hover: rgba(16, 185, 129, 0.1);
-  --border: rgba(16, 185, 129, 0.12);
-  --border-hover: rgba(16, 185, 129, 0.45);
+  /* Mapped to generic names used throughout */
+  --green: #4f46e5;
+  --green-light: #818cf8;
+  --green-dark: #3730a3;
+  --amber: #ec4899;
+  --amber-light: #f9a8d4;
+  --amber-dark: #be185d;
 
-  --text: #ecfdf5;
-  --text-muted: #6ee7b7;
-  --text-dim: #4b7a61;
+  /* Backgrounds — true deep black like the reference */
+  --bg: #0a0a0a;
+  --bg-2: #111111;
+  --bg-3: #1a1a2e;
+  --surface: rgba(79, 70, 229, 0.06);
+  --surface-hover: rgba(79, 70, 229, 0.12);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(79, 70, 229, 0.5);
 
-  --gradient: linear-gradient(135deg, var(--green), var(--amber));
-  --gradient-text: linear-gradient(135deg, var(--green-light) 0%, var(--amber-light) 100%);
-  --gradient-border: linear-gradient(135deg, var(--green-dark), var(--amber-dark));
+  /* Text */
+  --text: #fafafa;
+  --text-muted: #a1a1aa;
+  --text-dim: #52525b;
 
+  /* Gradients */
+  --gradient: linear-gradient(135deg, var(--indigo), var(--pink));
+  --gradient-text: linear-gradient(135deg, var(--indigo-light) 0%, var(--pink-light) 100%);
+  --gradient-border: linear-gradient(135deg, var(--indigo-dark), var(--pink-dark));
+
+  /* Geometry */
   --radius: 16px;
   --radius-sm: 10px;
   --radius-xl: 28px;
 
-  --shadow: 0 0 40px rgba(16, 185, 129, 0.12);
-  --shadow-hover: 0 0 60px rgba(16, 185, 129, 0.28), 0 0 30px rgba(245, 158, 11, 0.12);
-  --glow-green: 0 0 20px rgba(16, 185, 129, 0.5);
-  --glow-amber: 0 0 20px rgba(245, 158, 11, 0.5);
+  /* Shadows / glows */
+  --shadow: 0 0 40px rgba(79, 70, 229, 0.15);
+  --shadow-hover: 0 0 60px rgba(79, 70, 229, 0.32), 0 0 30px rgba(236, 72, 153, 0.18);
+  --glow-green: 0 0 24px rgba(79, 70, 229, 0.55);
+  --glow-amber: 0 0 24px rgba(236, 72, 153, 0.55);
 
   --nav-height: 72px;
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* ---------- Cursor-following blob (from reference theme) ---------- */
+#hki_blob {
+  background: linear-gradient(to right, #4f46e5, #ec4899);
+  height: 350px;
+  width: 350px;
+  border-radius: 50%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.55;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+  animation: blobRotate 20s linear infinite;
+}
+
+@keyframes blobRotate {
+  from { transform: rotate(0deg) scale(1); }
+  to   { transform: rotate(360deg) scale(1.18); }
+}
+
+/* Scramble text dud char style */
+.hki_dud { color: var(--pink); opacity: 0.7; }
 
 /* ---------- Reset & Base ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
